@@ -389,6 +389,8 @@ bool GracefulControllerROS::computeVelocityCommands(geometry_msgs::Twist& cmd_ve
   if (!odom_helper_.getOdomTopic().empty())
   {
     max_vel_x = robot_vel_x + (acc_lim_x_ * acc_dt_);
+    max_vel_x = std::min(max_vel_x, max_vel_x_);
+    max_vel_x = std::max(max_vel_x, min_vel_x_);
   }
 
   // Work back from the end of plan to find valid target pose
