@@ -55,8 +55,7 @@ class GoalCheckerFixture : public nav2_core::GoalChecker
 public:
   virtual void initialize(
     const rclcpp_lifecycle::LifecycleNode::WeakPtr&,
-    const std::string&,
-    const std::shared_ptr<nav2_costmap_2d::Costmap2DROS>)
+    const std::string&)
   {
     // Do nothing
   }

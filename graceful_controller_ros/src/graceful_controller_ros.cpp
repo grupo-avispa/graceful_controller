@@ -160,8 +160,8 @@ GracefulControllerROS::~GracefulControllerROS()
 
 void GracefulControllerROS::configure(
   const rclcpp_lifecycle::LifecycleNode::WeakPtr & weak_node,
-  std::string name, std::shared_ptr<tf2_ros::Buffer> tf,
-  std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros)
+  std::string name, const std::shared_ptr<tf2_ros::Buffer> & tf,
+  const std::shared_ptr<nav2_costmap_2d::Costmap2DROS> & costmap_ros)
 {
   if (initialized_)
   {

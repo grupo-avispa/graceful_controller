@@ -46,7 +46,7 @@
 #include <graceful_controller/graceful_controller.hpp>
 #include <std_msgs/msg/float32.hpp>
 #include <tf2/utils.h>
-#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 #include <visualization_msgs/msg/marker_array.hpp>
 
 #include "graceful_controller_ros/orientation_tools.hpp"
@@ -67,10 +67,10 @@ public:
    * @param tf A pointer to a transform buffer
    * @param costmap_ros The cost map to use for assigning costs to local plans
    */
-  virtual void configure(
-    const rclcpp_lifecycle::LifecycleNode::WeakPtr& node,
-    std::string name, std::shared_ptr<tf2_ros::Buffer> tf,
-    std::shared_ptr<nav2_costmap_2d::Costmap2DROS> costmap_ros);
+  void configure(
+    const rclcpp_lifecycle::LifecycleNode::WeakPtr & node,
+    std::string name, const std::shared_ptr<tf2_ros::Buffer> & tf,
+    const std::shared_ptr<nav2_costmap_2d::Costmap2DROS> & costmap_ros) override;
 
   /**
    * @brief Method to cleanup resources.
