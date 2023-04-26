@@ -41,6 +41,7 @@
 
 #include <vector>
 #include <nav_msgs/msg/path.hpp>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 namespace graceful_controller
 {
